@@ -1,7 +1,7 @@
 """
 Inference with trained CLIP Emotion Expression Model.
 Follows EDTalk's demo_EDTalk_A_using_predefined_exp_weights.py EXACTLY,
-but replaces predefined exp weights with CLIP-driven emotion model output.
+but replaces predefined exp weights with model output.
 """
 
 import os, sys, argparse
