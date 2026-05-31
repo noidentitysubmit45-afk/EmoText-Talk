@@ -1,26 +1,4 @@
-"""
-CLIPEmotionExpModel V2
 
-Upgrades over V1, following actual paper formulations:
-
-1. Dynamic Graph Attention (DGAT, Frontiers Psychiatry 2025)
-   - Adjacency updated via momentum: w_ij ← β·w_ij + (1-β)·e_ij
-   - e_ij computed via multi-head attention mechanism
-   - NOT a separate network generating adjacency — the adjacency
-     evolves during training based on attention between nodes
-
-2. Information Bottleneck (DisTIB, TPAMI 2024)
-   - Stochastic encoders with reparameterization trick
-   - Compression: KL(p(A|X) || r(A)) where r(A) = N(0,I)
-   - Sufficiency: reconstruction from (A, Z)
-   - Prediction: CrossEntropy classification
-   - Full objective: L = -[Sufficiency + Prediction] + β·Compression
-
-3. CLIP Verification Loss (novel — no existing paper does this)
-   - Generated face → CLIP image encoder → verify matches text prompt
-
-V1 files are UNTOUCHED.
-"""
 
 import torch
 import torch.nn as nn
