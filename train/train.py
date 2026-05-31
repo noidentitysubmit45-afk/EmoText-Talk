@@ -1,16 +1,4 @@
-"""
-Train CLIPEmotionExpModel V2
 
-V2 upgrades over V1:
-1. Dynamic Graph Attention (DGAT) — momentum-updated adjacency
-2. DisTIB Loss — stochastic encoder + KL compression + CE prediction
-3. CLIP Verification Loss — generated face matches text prompt
-
-Frozen: EDTalk generator, CLIP
-Trained: CLIPEmotionExpModelV2
-
-This is a NEW file. train_emotion.py (V1) is UNTOUCHED.
-"""
 
 import os, sys, json, glob, argparse, random
 import numpy as np
